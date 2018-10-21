@@ -1,0 +1,5 @@
+export const SET_USERS = 'SET_USERS'
+export const SET_USER = 'SET_USER'
+export const SET_CURRENT_USER = 'SET_CURRENT_USER'
+export const SET_USER_OPTIONS = 'SET_USER_OPTIONS'
+export const UPDATE_CURRENT_USER = 'UPDATE_CURRENT_USER'

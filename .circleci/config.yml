@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/boundless-frontend
+    docker:
+      - image: circleci/node:8.9.4
+    steps:
+      - checkout
+      - run: npm install
+      - run: 
+          command: |
+            sudo apt-get -y -qq update
+            sudo apt-get -y -qq install python3.4-dev python-pip libpython-dev
+            # curl -O https://bootstrap.pypa.io/get-pip.py
+            # python3.4 get-pip.py --user
+            sudo pip install -q awscli --upgrade
+            # pip3 install awscli --upgrade --user
+            bash ./deploy.sh $CIRCLE_BRANCH
